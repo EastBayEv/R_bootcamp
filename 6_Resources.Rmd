@@ -1,0 +1,76 @@
+---
+title: "6_Resources"
+author: "Evan Muzzall"
+date: "2023-05-09"
+output: html_document
+---
+
+[Schedule an SSDS consultation if you have questions about hypotheses, or anything else covered in this bootcamp!](https://library.stanford.edu/research/software-and-services-data-science/schedule-consulting-appointment-contact-us)
+
+# R basics
+
+* [Kerns GJ. IPSUR - Intro to Prob and Stats in R](https://rdrr.io/cran/IPSUR/f/inst/doc/IPSUR.pdf)
+* [RStudio cheatsheet](https://posit.co/wp-content/uploads/2022/10/rstudio-ide-1.pdf)
+* [Brandvain Y. Applied Biostats](https://bookdown.org/ybrandvain/Applied-Biostats/)
+
+# Data wrangling
+
+* dplyr [documentation](https://dplyr.tidyverse.org/) and [cheatsheet](https://posit.co/wp-content/uploads/2022/10/data-transformation-1.pdf)
+* tidyr [documentation](https://tidyr.tidyverse.org/) and [cheatsheet](https://posit.co/wp-content/uploads/2022/10/tidyr.pdf)
+
+# Text data
+
+* [Silge J and Robinson D. 2017. Text mining with R: A tidy approach](https://www.tidytextmining.com/)
+* [Using spacyr](https://cran.r-project.org/web/packages/spacyr/vignettes/using_spacyr.html)
+* [stringr cheatsheet](https://posit.co/wp-content/uploads/2022/10/strings-1.pdf)
+* [StackOverflow. How to read multiple txt files](https://stackoverflow.com/questions/3397885/how-do-you-read-multiple-txt-files-into-r)
+* [Engel C and Bailey S. Text Analysis with R](https://cengel.github.io/R-text-analysis/)
+
+# Data visualization
+
+* [Wilke CO. Fundamentals of Data Visualization](https://clauswilke.com/dataviz/)
+* [ggplot2 overview](https://ggplot2.tidyverse.org/) (see section "Learning ggplot2")
+* [ggplot2 cheatsheet](https://posit.co/wp-content/uploads/2022/10/data-visualization-1.pdf)
+* [ggplot2 extensions](https://exts.ggplot2.tidyverse.org/gallery/)
+* [Interactive Visualization with JavaScript and R](https://bioconnector.github.io/workshops/r-interactive-viz.html)
+
+# Exploratory data analysis
+
+* [Wickham H and Grolemund G. 2017. R for Data Science](https://r4ds.had.co.nz/exploratory-data-analysis.html)
+* [Kassambara A. STHDA Principal component methods in R: Practical Guide](http://www.sthda.com/english/articles/31-principal-component-methods-in-r-practical-guide/112-pca-principal-component-analysis-essentials/)
+
+# Hypothesis testing
+
+* [du Prel JB. 2009. Confidence interval or p-value?](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2689604/)
+* [Choldechova A. Lecture 8 - Hypothesis testing in R](https://www.andrew.cmu.edu/user/achoulde/94842/lectures/lecture07/lecture07-94842.html)
+
+# Presenting your research
+
+* [Projects in RStudio](https://bookdown.org/ndphillips/YaRrr/projects-in-rstudio.html)
+* [R Markdown Reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf) 
+* [R Markdown cheatsheet](https://posit.co/wp-content/uploads/2022/10/rmarkdown-1.pdf)
+* [Flexdashboard](https://pkgs.rstudio.com/flexdashboard/)
+
+# Reproducible research
+
+* [Software Carpentries. Navigating Files and Directories.](https://ytakemon.github.io/2019-10-22-R-BCCRC/02-filedir/)
+* [Software Carpentries. R for Reproducible Scientific Analysis](https://swcarpentry.github.io/r-novice-gapminder/)
+* [Anderson et al. 2022. R Programming for Research]()
+* [The "targets" vignette](https://cran.r-project.org/web/packages/targets/vignettes/overview.html)
+* [The "xtable" gallery](https://cran.r-project.org/web/packages/xtable/vignettes/xtableGallery.pdf)
+* [The "renv" package](https://rstudio.github.io/renv/articles/renv.html)
+* [The "pak" package](https://github.com/r-lib/pak)
+* [The "pacman" package](https://github.com/trinker/pacman)
+* [Gandrud C. 2013. Reproducible Research with R and RStudio](https://www.amazon.com/Reproducible-Research-Studio-Chapman-Hall/dp/1466572841)
+
+# Writing tips
+
+* [Mensh B and Kording K. 2017. Ten simple rules for structuring papers](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005619)
+
+# Going further
+
+* [Working with dates and times cheatsheet](https://posit.co/wp-content/uploads/2022/10/lubridate-1.pdf)
+* [Working with factors cheatsheet](https://posit.co/wp-content/uploads/2022/10/factors-1.pdf) (aka categorical data)
+* [Wickham H. 2019. Advanced R](https://adv-r.hadley.nz/)
+* [James et al. An Introduction to Statistical Learning](https://www.statlearning.com/) (aka machine learning)
+* [Making your first R package](https://tinyheero.github.io/jekyll/update/2015/07/26/making-your-first-R-package.html)

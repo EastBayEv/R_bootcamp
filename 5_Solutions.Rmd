@@ -1,0 +1,133 @@
+---
+title: "5_Solutions"
+author: "Evan Muzzall"
+date: "2023-05-09"
+output:
+  html_document:
+    df_print: paged
+    number_sections: yes
+    toc: yes
+    toc_float: yes
+  pdf_document:
+    toc: yes
+---
+
+# Challenge 1 - dataframes
+
+1. Open a new script a create a dataframe that contains 6 rows and 3 columns by following the instructions above.
+
+2. Advanced: what is the difference between a data frame and a tidyverse tibble? 
+
+```{r}
+# 1. 
+gpa <- c(3.5, 4.0, 3.3, 2.9, 3.8, 3.5)
+school <- c("UC Berkeley", "Stanford", "Stanford", "Stanford", "UC Berkeley", "UC Berkeley")
+graduated <- c(T, F, T, F, F, T)
+
+students <- data.frame(gpa, school, graduated)
+students
+
+# or directly within the call to data.frame()
+students <- data.frame(gpa = c(3.5, 4.0, 3.3, 2.9, 3.8, 3.5), 
+                       school = c("UCB", "SU", "SU", "SU", "UCB", "UCB"), 
+                       graduated = c(T, F, T, F, F, T))
+students
+
+# 2. 
+# https://jtr13.github.io/cc21fall1/tibble-vs.-dataframe.html#:~:text=10%209.,string%20into%20factor%20by%20default)
+```
+
+# Challenge 2 - subsetting
+
+1. Open a new script a create a subset that contains data from DC or stops less than or equal to 7000 and just columns "city" and "traffic_stops"
+
+2. Advanced: use the `filter()` and `select()` functions from the `dplyr` R package to do the same thing (hint: see the dplyr section below!)
+
+```{r}
+#1. 
+# recreate the dataframe if necessary
+police <- data.frame(traffic_stops = c(8814, 9915, 9829, 10161, 6810, 8991), 
+                     city = as.factor(c("SF", "DC", "DC", "DC", "SF", "SF")),
+                     year = as.integer(c(2000, 2000, 2001, 2002, 2001, 2002)))
+police
+
+# the base R way
+dc_7000 <- police[police$city == "DC" |
+                    police$traffic_stops <= 7000, c("city", "traffic_stops")]
+dc_7000
+
+# or, the dplyr way!
+library(dplyr)
+dc_7000 <- police %>%
+  filter(city == "DC" | traffic_stops <= 7000) %>%
+  select(city, traffic_stops)
+dc_7000
+```
+
+# Challenge 3 - `group_by()` and `mutate()`
+
+While `summarize()` will create a new tibble, `mutate()` creates a new column(s) in an existing tibble. 
+
+Open a new script and use the help file for the `mutate()` function that, combined with `group_by()`, creates a new column that computes the average stops per year for the `police` dataframe. (hint: assume there are 365 days in a year!)
+
+```{r}
+# 1.
+# recreate the dataframe if necessary
+police <- data.frame(traffic_stops = c(8814, 9915, 9829, 10161, 6810, 8991), 
+                     city = as.factor(c("SF", "DC", "DC", "DC", "SF", "SF")),
+                     year = as.integer(c(2000, 2000, 2001, 2002, 2001, 2002)))
+
+avg_stops <- police %>% 
+  mutate(avg = traffic_stops / 365)
+avg_stops
+```
+
+# Challenge 4 - .txt import
+
+1. Import the "frankenstein.txt" file from the "novels" subfolder. Save it in a variable named `frank`
+
+```{r}
+# 1. 
+# Read .txt file to a string
+frank <- paste(readLines("data/raw/novels/frankenstein.txt"), collapse="\n")
+
+# With the readr package
+# install.packages("readr")
+frank <- readr::read_file("data/raw/novels/frankenstein.txt")
+
+# Read the .txt file as a character string
+txt_file <- "data/raw/novels/frankenstein.txt"
+frank <- readChar(txt_file, file.info(txt_file)$size)
+```
+
+# Challenge 5 - line plot
+
+1. Use the gap dataset to figure out a way to use `geom_line()` to create a line plot of average lifeExp through time with a separate line for each continent. Before plotting however, use dplyr to pipe in your `group_by()` and `summarize()` functions directly into ggplot. 
+```{r}
+library(dplyr)
+library(ggplot2)
+gap <- read.csv("data/raw/gapminder-FiveYearData.csv")
+
+gap %>% group_by(continent, year) %>%
+  summarize(mean_LE = mean(lifeExp, na.rm = TRUE)) %>% 
+  ggplot() + geom_line(mapping = aes(x = year, y = mean_LE, 
+                                     color = continent), 
+                       lwd = 2) + xlab("Year") + ylab("Mean life expectancy") +
+  theme_minimal() 
+```
+
+# Challenge 6 - summary statistics
+
+1. Install and library the "psych" package and call the help file `?describeBy` to see how to produce this function's default summary statistics as grouped by continent.
+```{r}
+# install.packages("psych")
+library(psych)
+
+sum_stats <- psych::describeBy(gap, group = gap$continent)
+sum_stats
+```
+
+
+# Challenge 7 - conceptual p-value 0.08?
+
+Click to view [du Prel JB. 2009. Confidence interval or p-value?](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2689604/)

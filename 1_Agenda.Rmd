@@ -1,0 +1,52 @@
+---
+title: "SSDS Bootcamp Agenda "
+author: "Evan Muzzall"
+date: "2023-05-01"
+output: html_document
+---
+
+**9:15 - 9:30AM PST: Installations (optional). Show up early if you need installation help**  
+[Click this text to download R](https://cloud.r-project.org/)  
+[Click this text to download RStudio](https://posit.co/download/rstudio-desktop/)  
+
+**9:30 - 9:45: The modern academic research workflow**  
+Researcher responsibilities  
+R and RStudio, navigating RStudio  
+
+**9:45 - 10:45: R basics**  
+Variable assignment; functions, parameters, and arguments  
+Data types: numeric, character, logical, integer, factor  
+Data structures: lists and matrices, vectors and data frames  
+
+**10:45 - 11:00: Break**  
+
+**11:00-12:00PM: Data wrangling and reshaping**  
+The dollar sign operator and backet notation  
+The dplyr and tidyr R packages  
+Working with text data  
+
+**12:00 - 1:15: Data visualization with ggplot2**  
+ggplot2 requirements: layers, the plus symbol, data, aes, geom_, and theme_  
+Histogram: hist and geom_histogram  
+Boxplot: boxplot and geom_boxplot  
+Barchart: geom_col  
+Scatterplot: plot, geom_point, and geom_jitter  
+Line plot: geom_line  
+
+**1:15 - 2:15: Exploratory data analysis**  
+Summary statistics: mean, standard deviation, median, skew, and kurtosis  
+Principal component analysis  
+                    
+**2:15 - 3:15: Hypotheses, p-values, and confidence intervals**  
+Sums of squares tests: t.test, aov, cor.test, lm  
+
+**3:15 - 3:30: Break**  
+
+**3:30 - 4:30: Presenting your research**  
+R Projects, R Markdown, knit, html, ioslides  
+Dashboards with the flexdashboard package  
+Reproducible research and the targets package  
+Writing tips  
+
+**4:30 - 4:45: Wrap-up**  
+Green Library, SSDS, tutorials, and other resources
