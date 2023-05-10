@@ -25,7 +25,7 @@ Along with many other things, you'll learn a basic topic modeling workflow to be
 ![stm example](img/stm.png)
 
 ## Challenge questions and solutions
-You will be prompted to apply what you learn by seven challenge questions. Open 5_Solutions.Rmd to run the code to solutions.
+You will be prompted to apply what you learn by seven challenge questions. Open 5_Solutions.Rmd to run the solutions.
 
 ## Resources
 View 6_Resources.html for many useful resources.
