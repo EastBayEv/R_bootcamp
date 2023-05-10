@@ -18,6 +18,8 @@ Open the first three .html files:
 ## Run the code
 Open 4_tutorial.Rmd - don't worry about the strange formatting for now. Place your cursor on line 38 `x <- 5` and click the "Run" button or press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> on your keyboard. Then run line 39 and see if you can spot the output on the screen. 
 
+![stm example](img/stm.png)
+
 ## Challenge questions and solutions
 You will be prompted to apply what you learn by seven challenge questions. Open 5_Solutions.Rmd to run the code to solutions.
 
