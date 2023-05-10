@@ -16,12 +16,16 @@ Open the first three .html files:
 * 3_Navigating_RStudio.html - Learn your way around RStudio by getting familiar with essential windows and buttons
 
 ## Run the code
-Open 4_tutorial.Rmd - don't worry about the strange formatting for now. Place your cursor on line 38 `x <- 5` and click the "Run" button or press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> on your keyboard. Then run line 39 and see if you can spot the output on the screen. 
+Open "R Bootcamp.Rproj" to boot your RStudio. Click the "Files" tab on the right side of the screen and click on "4_tutorial.Rmd"
 
+Don't worry about the strange formatting for now. Place your cursor on line 38 `x <- 5` and click the "Run" button or press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> on your keyboard. Then run line 39 and see if you can spot the output on the screen. 
+
+### Dracula and Frankenstein
+Along with many other things, you'll learn a basic topic modeling workflow to begin to understand how abstractions are generated from unstructured text. Can you spot any distinctive words in the screenshot below?
 ![stm example](img/stm.png)
 
 ## Challenge questions and solutions
 You will be prompted to apply what you learn by seven challenge questions. Open 5_Solutions.Rmd to run the code to solutions.
 
 ## Resources
-View 6_Resources.html for many useful links to click through. 
+View 6_Resources.html for many useful resources.
