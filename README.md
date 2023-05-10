@@ -1,4 +1,5 @@
 # Welcome to the 2023 SSDS R Bootcamp at Green Library 
+![workflow example](img/workflow.png)
 
 ## Pre-workshop installations
 1. [Click this text to visit R download R webpage](https://cloud.r-project.org/)
