@@ -128,6 +128,6 @@ sum_stats
 ```
 
 
-# Challenge 7 - conceptual p-value 0.08?
-
-Click to view [du Prel JB. 2009. Confidence interval or p-value?](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2689604/)
+```{r klippy, echo=FALSE, include=TRUE}
+klippy::klippy()
+```

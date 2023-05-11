@@ -789,8 +789,6 @@ penguins_lm <- lm(body_mass_g ~ flipper_length_mm, data = penguins)
 summary(penguins_lm)
 ```
 
-# Challenge 7 - How to interpret a test result p-value of 0.08 if the cutoff is 0.05?
-
 # Presenting your research
 
 ## R projects
@@ -881,3 +879,8 @@ load("data/preprocessed/2023May12_penguins_gap_long.RData")
 
 
 # Wrap-up
+
+
+```{r klippy, echo=FALSE, include=TRUE}
+klippy::klippy()
+```
