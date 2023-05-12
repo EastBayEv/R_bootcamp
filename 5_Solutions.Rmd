@@ -78,7 +78,8 @@ police <- data.frame(traffic_stops = c(8814, 9915, 9829, 10161, 6810, 8991),
                      year = as.integer(c(2000, 2000, 2001, 2002, 2001, 2002)))
 
 avg_stops <- police %>% 
-  mutate(avg = traffic_stops / 365)
+  group_by(year) %>% 
+  mutate(avg = mean(traffic_stops))
 avg_stops
 ```
 
@@ -102,7 +103,8 @@ frank <- readChar(txt_file, file.info(txt_file)$size)
 
 # Challenge 5 - line plot
 
-1. Use the gap dataset to figure out a way to use `geom_line()` to create a line plot of average lifeExp through time with a separate line for each continent. Before plotting however, use dplyr to pipe in your `group_by()` and `summarize()` functions directly into ggplot. 
+1. Use `geom_line()` to create a line plot of mean lifeExpectancy through time FOR EACH CONTINENT using the gap dataset loaded below. Before plotting however, use dplyr to pipe in your `group_by()` and `summarize()` functions directly into ggplot. 
+
 ```{r}
 library(dplyr)
 library(ggplot2)

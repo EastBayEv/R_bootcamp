@@ -474,7 +474,7 @@ Importing data can be fairly straightforward thanks to R's syntax and the clicka
 ```{r}
 penguins <- read.csv("data/raw/penguins.csv")
 head(penguins) # show first 6 rows by default
-str(penguins)  # show compact structure: class, nrow, ncole, column names and types, and examples of the data
+str(penguins)  # show compact structure: class, nrow, ncol, column names and types, and examples of the data
 nrow(penguins) # number of rows
 ncol(penguins) # number of columns
 dim(penguins)  # number of rows by columns
@@ -492,7 +492,7 @@ Alternatively you can click the "Import Dataset" button as in the screenshot bel
 
 ## The tidyr package
 
-However, data are not always nicely formatted for exploration and analysis. This means that before we clean and subet data, we actually have to reshape it first. We often want the format to be [tidy](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html), which makes the data ready for summarization, visualization, and analysis. Check out the [Carpentries lesson on data formats to learn more](https://swcarpentry.github.io/r-novice-gapminder/14-tidyr/index.html). 
+However, data are not always nicely formatted for exploration and analysis. This means that before we clean and subset data, we actually have to reshape it first. We often want the format to be [tidy](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html), which makes the data ready for summarization, visualization, and analysis. Check out the [Carpentries lesson on data formats to learn more](https://swcarpentry.github.io/r-novice-gapminder/14-tidyr/index.html). 
 
 Signs of messy datasets
 - Column headers are values, not variable names.
@@ -533,7 +533,7 @@ ggplot(japan, aes(x = year, y = obs_values)) +
 gdp_oceania <- gap_long %>%
   filter(obs_type == "gdpPercap",
          continent == "Oceania")
-
+library(ggplot2)
 ggplot(gdp_oceania, aes(x = year, 
                          y = obs_values, 
                          color = country)) +
@@ -682,10 +682,12 @@ library(dplyr)
   summarize(mean_bmg = mean(body_mass_g, na.rm = TRUE)))
 
 # plot
-ggplot(bmg_means, aes(x = species, y = mean_bmg)) + 
+ggplot(bmg_means, aes(x = species, 
+                      y = mean_bmg)) + 
   geom_col() +
-  theme_classic() +
-  scale_y_continuous(limits = c(0, 8000))
+  theme_bw() +
+  scale_y_continuous(limits = c(0, 6000), 
+                     breaks = c(0, 1000, 2000, 3000, 4000, 5000, 6000))
 ```
 
 ## Scatterplot
@@ -733,8 +735,10 @@ library(patchwork)
 
 # Challenge 5 - line plot
 
-1. Use `geom_line()` to create a line plot of lifeExpectancy through time using your tidy-formatted `gap` dataset from Challenge 4 above. Before plotting however, use dplyr to pipe in your `group_by()` and `summarize()` functions directly into ggplot. 
-
+1. Use `geom_line()` to create a line plot of mean lifeExpectancy through time FOR EACH CONTINENT using the gap dataset loaded below. Before plotting however, use dplyr to pipe in your `group_by()` and `summarize()` functions directly into ggplot. 
+```{r}
+gap <- read.csv("data/raw/gapminder-FiveYearData.csv")
+```
 # Exploratory data analysis
 
 Whether before or after you visualize, it is usually good to crunch some actual numbers as a companion to whichever visualizations you produce. 
