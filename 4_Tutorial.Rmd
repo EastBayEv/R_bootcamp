@@ -14,25 +14,25 @@ output:
 
 # R basics
 
-Use R building blocks in creative ways to tackle any task! The challenge is arranging them in creative and specific ways to accomplish meaningful research. 
+Use R building blocks in creative ways to tackle any task! The challenge is arranging them in creative and specific ways to accomplish your goals. 
 
 ## Basic building blocks of R programming
 
 Several vocabulary/jargon terms will help you begin to understand how R works!  
 
-1. Everything that exists in R is an **object** or some piece of information/data that can be manipulated. All objects have a class, or type, that determinines how the data can be wrangled and shaped. 
+1. Everything that exists in R is an **object** or some piece of information/data that can be manipulated. All objects have a class, or type, that determines how the data can be wrangled and shaped. 
 2. Almost everything that happens is a **function call**, or a command that performs an action on a "thing". Functions frequently contain trailing round parentheses `()`, such as in `mean()`. 
 3. The "things" we give to functions are called **arguments** and are defined in function creation as **parameters**, or placeholders that receive arguments we pass into them.
 4. **Variables** (which are also objects) are how data are saved in R's memory, which lives in a physical location on your computer. Variables can contain virtually anything: values, mathematical expressions, text, functions, or entire datasets. 
-5. `<-` is the assignment operator. It assigns values on the right to objects on the left. So, after executing `x <- 5`, the value of `x` is `5`. 
-  * You can read this in plain language as "x is defined as 5", "5 is assigned to x", or most simply as "x is equal to 5".  
+5. `<-` is the assignment operator. It assigns values on the right to objects on the left. So, after executing `x <- 5`, the value `5` is saved inside of the variable `x`.  
+  * You can read this in plain language as "x is defined as 5", "5 is assigned to x", "x is equal to 5", or most simply "x is 5".  
   * This performs the assignment step. Note that the variable now appears on your "Environment" tab.  
 
 ## Running code
 
-Open a new R script by clicking "File" --> "New File" --> "R Script". Save it and then copy/paste the below codeClick a line of code and on your keyboard press `ctrl` and `enter` keys simultaneously. 
+Open a new R script by clicking "File" --> "New File" --> "R Script". Save it and then copy/paste the below code. Click a line of code and on your keyboard press `ctrl` and `enter` keys simultaneously. This is how you will tackle challenge questions during the bootcamp. 
 
-Note that no sort of result is displayed on the screen during the assignment step. Type the name of the variable and run it ("call" the variable) to show the output in the console. 
+Note that no output is displayed on the screen during the assignment step. Type the name of the variable and run it ("call" the variable) to show the output in the console. 
 
 ```{r}
 x <- 5
@@ -127,6 +127,7 @@ You can also use `dir()` to view the contents of your working directory (aka the
 Remove a single variable with `rm()`
 
 ```{r eval = F}
+dir()
 rm(my_name)
 my_name # Error
 ```
@@ -205,9 +206,9 @@ str(police)
 A vector can be indexed (positionally referenced) by typing its name followed by its index within square brackets `[]`. For example, if we want to index just the first thing in the "city" vector, we could type
 
 ```{r}
-city[1]
+city[700]
 # or
-police$city[1]
+police$traffic_stops
 ```
 
 If we want to return just the third element in traffic_stops, we would type
@@ -232,6 +233,8 @@ police$traffic_stops
 hist(police$traffic_stops)
 ```
 
+> Click and drag your plotting area to make it larger if you receive the error message "Error in plot.new() : figure margins too large"
+
 ## `[,]` Bracket notation subsetting
 
 This can also be extended to rows and columns using bracket notation `[,]`
@@ -249,11 +252,12 @@ To subset the `police` with just the city name and number of stops columns, type
 ```{r}
 city_and_stops <- police[,c(1,2)]
 city_and_stops
-# or, for consecutive sequences
+# or, use the colon operator for consecutive sequences
+5:10
 city_and_stops <- police[,1:2]
 city_and_stops
 # or using variable names
-city_and_stops <- police[,c("city", "traffic_stops")]
+city_and_stops <- police[ ,c("city", "traffic_stops")]
 city_and_stops
 ```
 
@@ -289,7 +293,8 @@ Or, to include multiple conditions use logical and `&` (all conditions must be s
 To subset just rows that contain SF as the city and stops less than 7000, type
 
 ```{r}
-sf_low_stops <- police[police$city == "SF" & police$traffic_stops < 7000, ]
+sf_low_stops <- police[police$city == "SF" & 
+                         police$traffic_stops < 7000, ]
 sf_low_stops
 ```
 
@@ -310,10 +315,10 @@ my_list <- list("Grapefruit", TRUE, "Nerd Squirrel", c(3.14, 2.13, 1.45))
 my_list
 ```
 
-You can alaso name the list elements:
+You can also name the list elements:
 
 ```{r}
-names(my_list) <- c("food", "logical value", "name", "vector")
+names(my_list) <- c("one_food", "logical_value", "name_of_something", "vector_of_-stuff")
 my_list
 ```
 
@@ -351,6 +356,7 @@ Read the **Description** section to learn what the function does. See the **Usag
 ?hist # histogram
 ?lm # look at help pages for linear regression
 ?glm # generalized linear models
+?shapiro.test # perform normality test
 ?">" # Wrap symbols in quotations to view their help files
 ?"&"
 ```
@@ -377,7 +383,7 @@ Package installation exists in two steps:
 
 ```{r}
 # Step 1. Physically download the dplyr and tidyr files
-# install.packages("dplyr")
+install.packages("dplyr")
 # install.packages("tidyr")
 
 # Step 2. Link these files to your current session
@@ -392,14 +398,14 @@ Several dplyr functions will help us quickly subset data.
 2. `select()` - select certain columns
 3. `group_by()` - perform grouping operations
 4. `summarize()` - create a new dataframe that summarizes each group to a single row (e.g., group means and standard deviations)
-5. `mutate()` - create, modify, and delete columns
+5. `mutate()` - create, modify, and delete columns OF AN EXISTING data frame
 
 However, our operations will be based on pipes `%>%`, that tell R to take the thing on the left of the pipe and insert it into the thing on the right. 
 
 How does it work? 
 
 1. We generally want to create a new varible, so you will be performing **variable assignment.**
-2. Type the name of your dataset (**police**) followed by the pipe symbol.
+2. Type the name of your dataset (`police`) followed by the pipe symbol.
 3. Type the name of the `filter()` function, and insert a condition in the parentheses. 
 4. Add an additional pipe at the end of step 3 above if you want to add more functions. 
 
@@ -419,7 +425,6 @@ Or, to filter only rows in `police` with stops greater than 10000 and select onl
 
 ```{r}
 high_stops2 <- police %>%
-  filter(traffic_stops > 10000) %>%
   select(city, traffic_stops)
 high_stops2
 ```
@@ -445,6 +450,16 @@ sub2
 ```
 
 ### `group_by()` and `summarize()`
+
+dplyr also makes it easy to quickly create summary statistics!
+
+```{r}
+city_mean_sd <- police %>%
+  group_by(city) %>%
+  summarize(stops_mean = mean(traffic_stops), 
+            stops_sd = sd(traffic_stops))
+city_mean_sd
+```
 
 # Challenge 3 - `group_by()` and `mutate()`
 
@@ -541,6 +556,7 @@ dir(dir_of_texts)
 
 ```{r}
 # install.pacakges("readtext")
+library(readtext)
 texts_df <- readtext::readtext(dir_of_texts)
 texts_df
 ```
@@ -548,7 +564,8 @@ texts_df
 3. Convert the dataframe into a corpus object
 
 ```{r}
-# install.packages("corpus")
+# install.packages("tm")
+library(tm)
 corpus <- tm::Corpus(tm::VectorSource(texts_df))
 corpus
 glimpse(corpus)
@@ -557,6 +574,7 @@ glimpse(corpus)
 4. Preprocess the text!
 ```{r}
 # install.packages("stm")
+library(stm)
 clean_corpus <- stm::textProcessor(documents=texts_df$text,
                                  # metadata = texts_df$doc_id,
                                  lowercase = TRUE, #*
@@ -710,7 +728,7 @@ B <- ggplot(penguins, aes(x = flipper_length_mm,
 
 # install.packages("patchwork")
 library(patchwork)
-(A + B )
+(A + B)
 ```
 
 # Challenge 5 - line plot

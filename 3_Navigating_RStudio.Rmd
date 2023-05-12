@@ -1,7 +1,7 @@
 ---
 title: "3 Navigating RStudio"
 author: "Evan Muzzall"
-date: "2023-04-04"
+date: "2023-05-12"
 output: html_document
 ---
 
@@ -9,27 +9,25 @@ output: html_document
 
 R is the programming language we will use. Think of it as a way to give instructions to our computer for data-related tasks. 
 
-Data need to be imported, wrangled, explored, and analyzed in order to make contributions to the legitimate bodies of knowledge of your field. 
-
-R is expert at these computational parts of the research process, It is a free (to use, not necessarily to develop!) and open programming language that helps you teach a computer to perform a "data science" task. Note that R was designed to do statistics/data science from its conception and has evolved that way. 
+R is an appropriate tool the computational parts of the research process. It is a free (for us to use, but not necessarily to develop!) and open programming language that helps you interact with a computer to perform data science tasks. Note that R was designed to do statistics/data science from its conception and has evolved that way. 
 
 ## Why RStudio?
 
-* RStudio is the environment that we will program R within. It contains lots of helpful features we will discuss. 
+* RStudio is the environment that we will program R inside of and contains many helpful features.  
 
 * RStudio is the graphical user interface/environment that we will program R inside of. It is really helpful for staying organized and offers much more functionality than the R language provides by itself. RStudio is also highly customizable. [Read the customization guide by clicking here](https://support.rstudio.com/hc/en-us/articles/200549016-Customizing-the-RStudio-IDE).
 
 
 ## Source files
 
-So, where do we type instructions for these data related tasks? We normally enter our instructions in either an 1) R script or 2) RMarkdown file. 
+We enter instructions for our data-related tasks in an R source file. These source files usually take the form of an 1) R script or 2) RMarkdown file. 
 
-### Script
+### R script
 
-R scripts are simply plain text files with a .R file extension. Click `File --> New File --> R Script` to open one. In R scripts: 
-- Code is entered normally
-- Hashtags `#` are used to comment your code, enter text, or otherwise make notes to yourself and others. 
-- Open a new script and enter `2 + 2`. Then, place your cursor anywhere on that line of code and press the `control` and `enter` keys simultaneously to run it! 
+R scripts are simply plain text files with a .R file extension. Click `File --> New File --> R Script` to open one. In R scripts:  
+- Code is entered normally  
+- Hashtags `#` are used to comment your code, enter text, or otherwise make notes to yourself and collaborators.  
+- Open a new script and enter `2 + 2`. Then, place your cursor anywhere on that line of code and press the `control` and `enter` keys simultaneously to run it!  
 
 We will also discuss RMarkdown as an alternative to R scripts as well as R Projects to help keep everything organized. 
 

@@ -1,9 +1,11 @@
 ---
 title: "SSDS Bootcamp Agenda "
 author: "Evan Muzzall"
-date: "2023-05-01"
+date: "2023-05-12"
 output: html_document
 ---
+
+2023 May 12
 
 **9:15 - 9:30AM PST: Installations (optional). Show up early if you need installation help**  
 [Click this text to download R](https://cloud.r-project.org/)  
@@ -23,6 +25,7 @@ Data structures: lists and matrices, vectors and data frames
 **11:00-12:00PM: Data wrangling and reshaping**  
 The dollar sign operator and backet notation  
 The dplyr and tidyr R packages  
+Importing files  
 Working with text data  
 
 **12:00 - 1:15: Data visualization with ggplot2**  

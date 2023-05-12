@@ -1,7 +1,7 @@
 ---
 title: "The modern academic research workflow"
 author: "Evan Muzzall"
-date: "2023-05-01"
+date: "2023-05-12"
 output: html_document
 ---
 
@@ -40,7 +40,7 @@ Begin to familiarize yourself with the many ethnical points to consider along wi
 
 * **Acquire** data. All projects require some form of data (again, theoretical musings aside), whether you obtain it from a government or other organization, use an API, scrape it from the web, or collect it yourself. 
 * **Import** the data into R. As you can see, there is a lot of work to be done even before the computational part! Also, many questions that will arise will be related to the non-R parts. However, do not let this discourage you from experimenting with R! You will most definitely encounter many questions and error messages. 
-* **Wrangle** your data to further ensure it is appropriate for the current question and project. Combined with your chosen statistical methods, the data should in some form be considered interpretable as a means to answer your research question. However, inconsistencies and other errors are inevitable, especially when compiling data from multiple sources. No dataset is perfect and some are better fit than others for your taask. 
+* **Wrangle** your data to further ensure it is appropriate for the current question and project. Combined with your chosen statistical methods, the data should in some form be considered interpretable as a means to answer your research question. However, inconsistencies and other errors are inevitable, especially when compiling data from multiple sources. No dataset is perfect and some are better fit than others for your task. 
 
 Close visual inspection for errors is always a good first step, but you will likely spend much of your time fixing structural errors, standardizing names, handling missing values, dealing with non-normal distributions and outliers, and removing duplicate observations. You should always document your data wrangling process in the event you need to revisit your steps in the future. Your audience might be interested as well. 
 
